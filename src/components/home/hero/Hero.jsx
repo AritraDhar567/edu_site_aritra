@@ -1,36 +1,27 @@
 import React from "react"
-import Heading from "../../common/Heading"
-import "./hero.css"
+import Heading from "../../common/heading/Heading"
+import "./Hero.css"
 
 const Hero = () => {
   return (
     <>
       <section className='hero'>
         <div className='container'>
-          <Heading title='Search Your Next Home ' subtitle='Find new & featured property located in your local city.' />
-
-          <form className='flex'>
-            <div className='box'>
-              <span>City/Street</span>
-              <input type='text' placeholder='Location' />
+          <div className='row'>
+            <Heading subtitle='WELCOME TO ACADEMIA' title='Best Online Education Expertise' />
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <div className='button'>
+              <button className='primary-btn'>
+                GET STARTED NOW <i className='fa fa-long-arrow-alt-right'></i>
+              </button>
+              <button>
+                VIEW COURSE <i className='fa fa-long-arrow-alt-right'></i>
+              </button>
             </div>
-            <div className='box'>
-              <span>Property Type</span>
-              <input type='text' placeholder='Property Type' />
-            </div>
-            <div className='box'>
-              <span>Price Range</span>
-              <input type='text' placeholder='Price Range' />
-            </div>
-            <div className='box'>
-              <h4>Advance Filter</h4>
-            </div>
-            <button className='btn1'>
-              <i className='fa fa-search'></i>
-            </button>
-          </form>
+          </div>
         </div>
       </section>
+      <div className='margin'></div>
     </>
   )
 }

@@ -1,40 +1,46 @@
 import React, { useState } from "react"
-import "./header.css"
-import { nav } from "../../data/Data"
 import { Link } from "react-router-dom"
+import Head from "./Head"
+import "./header.css"
 
 const Header = () => {
-  const [navList, setNavList] = useState(false)
+  const [click, setClick] = useState(false)
 
   return (
     <>
+      <Head />
       <header>
-        <div className='container flex'>
-          <div className='logo'>
-            <img src='./images/logo.png' alt='' />
+        <nav className='flexSB'>
+          <ul className={click ? "mobile-nav" : "flexSB "} onClick={() => setClick(false)}>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='/courses'>All Courses</Link>
+            </li>
+            <li>
+              <Link to='/about'>About</Link>
+            </li>
+            <li>
+              <Link to='/team'>Team</Link>
+            </li>
+            <li>
+              <Link to='/pricing'>Pricing</Link>
+            </li>
+            <li>
+              <Link to='/journal'>Journal</Link>
+            </li>
+            <li>
+              <Link to='/contact'>Contact</Link>
+            </li>
+          </ul>
+          <div className='start'>
+            <div className='button'>GET CERTIFICATE</div>
           </div>
-          <div className='nav'>
-            <ul className={navList ? "small" : "flex"}>
-              {nav.map((list, index) => (
-                <li key={index}>
-                  <Link to={list.path}>{list.text}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className='button flex'>
-            <h4>
-              <span>2</span> My List
-            </h4>
-            <button className='btn1'>
-              <i className='fa fa-sign-out'></i> Sign In
-            </button>
-          </div>
-
-          <div className='toggle'>
-            <button onClick={() => setNavList(!navList)}>{navList ? <i className='fa fa-times'></i> : <i className='fa fa-bars'></i>}</button>
-          </div>
-        </div>
+          <button className='toggle' onClick={() => setClick(!click)}>
+            {click ? <i className='fa fa-times'> </i> : <i className='fa fa-bars'></i>}
+          </button>
+        </nav>
       </header>
     </>
   )

@@ -1,18 +1,19 @@
 import React from "react"
-import Back from "../common/Back"
-import PriceCard from "../home/price/PriceCard"
-import img from "../images/pricing.jpg"
-import "../home/price/price.css"
+import Back from "../common/back/Back"
+import PriceCard from "./PriceCard"
+import "./price.css"
+import Faq from "./Faq"
 
 const Pricing = () => {
   return (
     <>
-      <section className='pricing mb'>
-        <Back name='30 days money back guarantee' title='No Extra Fees. Friendly Support' cover={img} />
-        <div className='price container'>
+      <Back title='Choose The Right Plan' />
+      <section className='price padding'>
+        <div className='container grid'>
           <PriceCard />
         </div>
       </section>
+      <Faq />
     </>
   )
 }
